@@ -5,6 +5,13 @@ Demo:
 - https://ifconfig.co
 - https://ip.zatp.com
 
+You can easily pull the Docker Image I build:
+```
+docker pull hurt/echoip
+docker run -d --rm --name echoip -p8080:8080 hurt/echoip
+```
+*GeoIP database version: 20210511*
+
 ### Build
 #### Clone this project
 ```
