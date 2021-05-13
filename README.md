@@ -5,12 +5,14 @@ Demo:
 - https://ifconfig.co
 - https://ip.zatp.com
 
-You can easily pull the Docker Image I build:
+You can use the Docker Image I build for test:
 ```
 docker pull hurt/echoip
 docker run -d --rm --name echoip -p8080:8080 hurt/echoip
 ```
 *GeoIP database version: 20210511*
+
+See the doc on [my blog](https://www.zatp.com/2021/05/build-echoip-service-with-docker/).
 
 ### Build
 #### Clone this project
@@ -27,7 +29,6 @@ You can get the newest GeoIP database from [MAXMIND](https://dev.maxmind.com/geo
 
 Then extract and place the files into ```geoip``` folder or you can edit ```run.sh``` to choose what you need.
 
-**Usage:**
 ```
 Usage of echoip:
   -C int
@@ -66,7 +67,6 @@ server {
     listen 80;
     listen [::]:80;
     ...
-
     location / {
         if ($http_user_agent !~* (curl|wget)) {
             return 301 https://$server_name$request_uri;
@@ -78,14 +78,12 @@ server {
 		proxy_pass  http://localhost:8080;
     }
 }
-
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
     ssl_certificate /path/to/ssl/chain.pem; 
     ssl_certificate_key /path/to/ssl/private.key;
     ...
-
     location / {
         proxy_set_header  Host $host;
 		proxy_set_header  X-Real-IP $remote_addr;
@@ -95,3 +93,9 @@ server {
     }
 }
 ```
+
+### TODO
+
+- [ ] Auto update GeoIP db
+
+- [ ] Github Actions
