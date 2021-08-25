@@ -29,6 +29,8 @@ You can get the latest GeoIP database from [MAXMIND](https://dev.maxmind.com/geo
 
 Then **extract and place the files into** ```geoip``` **folder** or you can edit ```run.sh``` to choose what you need.
 
+Do not forget ```chmod +x run.sh```.
+
 ```
 Usage of echoip:
   -C int
