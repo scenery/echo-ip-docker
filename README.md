@@ -12,6 +12,23 @@ docker run -d --rm --name echoip -p8080:8080 hurt/echoip
 ```
 *GeoIP database version: 20210511*
 
+See the doc on [my blog](https://www.zatp.com/post/build-echoip-service-with-docker/).
+
+### Build
+#### Clone this project
+```
+git clone https://github.com/scenery/EchoIPDocker.git echoip
+cd echoip
+```
+
+#### Download GeoIP data
+You can get the latest GeoIP database from [MAXMIND](https://dev.maxmind.com/geoip/geoip2/geolite2/). At least three files are required as follows:
+- GeoLite2-ASN.mmdb
+- GeoLite2-City.mmdb
+- GeoLite2-Country.mmdb
+
+Then **extract and place the files into** ```geoip``` **folder** or you can edit ```run.sh``` to choose what you need.
+
 ```
 Usage of echoip:
   -C int
@@ -31,23 +48,6 @@ Usage of echoip:
   -t string
     	Path to template directory (default "html")
 ```
-
-See the doc on [my blog](https://www.zatp.com/post/build-echoip-service-with-docker/).
-
-### Build
-#### Clone this project
-```
-git clone https://github.com/scenery/EchoIPDocker.git echoip
-cd echoip
-```
-
-#### Download GeoIP data
-You can get the latest GeoIP database from [MAXMIND](https://dev.maxmind.com/geoip/geoip2/geolite2/). At least three files are required as follows:
-- GeoLite2-ASN.mmdb
-- GeoLite2-City.mmdb
-- GeoLite2-Country.mmdb
-
-Then **extract and place the files into** ```geoip``` **folder** or you can edit ```run.sh``` to choose what you need.
 
 #### Build the container
 ```
