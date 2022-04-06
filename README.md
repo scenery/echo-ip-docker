@@ -3,7 +3,6 @@ This is a Docker image for looking up IP address based on https://github.com/mpo
 
 Demo: 
 - https://ifconfig.co
-- https://ip.zatp.com
 
 You can use the [Docker Image](https://hub.docker.com/r/hurt/echoip) I build for test:
 ```
