@@ -11,7 +11,7 @@ docker run -d --rm --name echoip -p8080:8080 hurt/echoip
 ```
 *GeoIP database version: 20210511*
 
-See the doc on [my blog](https://www.zatp.com/post/build-echoip-service-with-docker/).
+See the doc on [my blog](https://atpx.com/blog/build-echoip-service-with-docker/).
 
 ### Build
 #### Clone this project
@@ -73,10 +73,10 @@ server {
             return 301 https://$server_name$request_uri;
         }
         proxy_set_header  Host $host;
-		proxy_set_header  X-Real-IP $remote_addr;
-		proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
-		proxy_set_header  X-Forwarded-Proto $scheme;
-		proxy_pass  http://localhost:8080;
+	proxy_set_header  X-Real-IP $remote_addr;
+	proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+	proxy_set_header  X-Forwarded-Proto $scheme;
+	proxy_pass  http://localhost:8080;
     }
 }
 server {
@@ -87,10 +87,10 @@ server {
     ...
     location / {
         proxy_set_header  Host $host;
-		proxy_set_header  X-Real-IP $remote_addr;
-		proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
-		proxy_set_header  X-Forwarded-Proto $scheme;
-		proxy_pass  http://localhost:8080;
+	proxy_set_header  X-Real-IP $remote_addr;
+	proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+	proxy_set_header  X-Forwarded-Proto $scheme;
+	proxy_pass  http://localhost:8080;
     }
 }
 ```
